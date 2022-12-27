@@ -1,0 +1,1098 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="DBtecnicalservicesModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="TBL_ABOUTUS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ABOUTUS" Type="varchar" MaxLength="1000" />
+        </EntityType>
+        <EntityType Name="TBL_ADMIN">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="USER NAME" Type="varchar" MaxLength="10" />
+          <Property Name="PASSWORD" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="TBL_BILLDETAIL">
+          <Key>
+            <PropertyRef Name="BILLDETAILID" />
+          </Key>
+          <Property Name="BILLDETAILID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PRODUCT" Type="varchar" MaxLength="50" />
+          <Property Name="NUMBER" Type="smallint" />
+          <Property Name="PRICE" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="TOTALPRICE" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="BILLID" Type="int" />
+        </EntityType>
+        <EntityType Name="TBL_BILLINFORMATION">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SERIES" Type="char" MaxLength="1" />
+          <Property Name="ITEMNO" Type="varchar" MaxLength="6" />
+          <Property Name="DATE" Type="smalldatetime" />
+          <Property Name="TIME" Type="char" MaxLength="5" />
+          <Property Name="TAXOFFICE" Type="varchar" MaxLength="50" />
+          <Property Name="CURRENT" Type="int" />
+          <Property Name="PERSON" Type="smallint" />
+        </EntityType>
+        <EntityType Name="TBL_CATEGORIES">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NAME" Type="varchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="TBL_CONNECTTION">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NAMESURNAME" Type="varchar" MaxLength="50" />
+          <Property Name="MAIL" Type="varchar" MaxLength="50" />
+          <Property Name="SUBJECT" Type="varchar" MaxLength="50" />
+          <Property Name="MESSAGE" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="TBL_CURRENT">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NAME" Type="varchar" MaxLength="30" />
+          <Property Name="SURNAME" Type="varchar" MaxLength="30" />
+          <Property Name="PHONE" Type="varchar" MaxLength="20" />
+          <Property Name="MAIL" Type="varchar" MaxLength="50" />
+          <Property Name="PROVINCE" Type="varchar" MaxLength="50" />
+          <Property Name="DISTRICT" Type="varchar" MaxLength="30" />
+          <Property Name="BANK" Type="varchar" MaxLength="50" />
+          <Property Name="TAXOFFICE" Type="varchar" MaxLength="50" />
+          <Property Name="TAXNUMBER" Type="varchar" MaxLength="50" />
+          <Property Name="STATUES" Type="varchar" MaxLength="50" />
+          <Property Name="ADRESS" Type="varchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="TBL_DEFECTDETAIL">
+          <Key>
+            <PropertyRef Name="ERRORID" />
+          </Key>
+          <Property Name="ERRORID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OPERATION" Type="int" />
+          <Property Name="PROBLEM" Type="varchar" MaxLength="250" />
+          <Property Name="EXPLANATION" Type="varchar" MaxLength="250" />
+          <Property Name="FIRSTPRICE" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="PRICE" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="OPS" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="TBL_DEPARTMAN">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NAME" Type="varchar" MaxLength="50" />
+          <Property Name="EXPLANATION" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="TBL_ilceler">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="ilce" Type="nvarchar" MaxLength="255" />
+          <Property Name="sehir" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TBL_iller">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="sehir" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="TBL_NOTES">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="HEADING" Type="varchar" MaxLength="50" />
+          <Property Name="CONTENT1" Type="varchar" MaxLength="500" />
+          <Property Name="STATUS" Type="bit" />
+          <Property Name="DATE" Type="smalldatetime" />
+        </EntityType>
+        <EntityType Name="TBL_OUTGOINGS">
+          <Key>
+            <PropertyRef Name="OUTGOINGSID" />
+          </Key>
+          <Property Name="OUTGOINGSID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OUTGOINGEXPLANATION" Type="varchar" MaxLength="50" />
+          <Property Name="DATE" Type="smalldatetime" />
+          <Property Name="PRICE" Type="decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="TBL_PERSON">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AD" Type="varchar" MaxLength="30" />
+          <Property Name="SOYAD" Type="varchar" MaxLength="30" />
+          <Property Name="DEPARTMENT" Type="tinyint" />
+          <Property Name="PHOTO" Type="varchar" MaxLength="100" />
+          <Property Name="MAIL" Type="varchar" MaxLength="50" />
+          <Property Name="PHONE" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="TBL_PRODUCTACCEPTENCE">
+          <Key>
+            <PropertyRef Name="OPERATIONID" />
+          </Key>
+          <Property Name="OPERATIONID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CURRENT" Type="int" />
+          <Property Name="PERSON" Type="smallint" />
+          <Property Name="ARRIVEDATE" Type="smalldatetime" />
+          <Property Name="ENDINGDATE" Type="smalldatetime" />
+          <Property Name="PROSERNUM" Type="char" MaxLength="5" Nullable="false" />
+          <Property Name="PRODUCTSTATUS" Type="bit" />
+          <Property Name="PRODUCTSTATUSDETAIL" Type="varchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="TBL_PRODUCTFOLLOWING">
+          <Key>
+            <PropertyRef Name="FOLLOWINGID" />
+          </Key>
+          <Property Name="FOLLOWINGID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EXPLANATION" Type="varchar" MaxLength="200" />
+          <Property Name="DATE" Type="smalldatetime" />
+          <Property Name="SERIALNO" Type="char" MaxLength="5" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TBL_PRODUCTMOVEMENT">
+          <Key>
+            <PropertyRef Name="MOVEMENTID" />
+          </Key>
+          <Property Name="MOVEMENTID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PRODUCT" Type="int" />
+          <Property Name="COSTUMER" Type="int" />
+          <Property Name="PERSON" Type="smallint" />
+          <Property Name="DATE" Type="smalldatetime" />
+          <Property Name="NUMBER" Type="smallint" />
+          <Property Name="PRICE" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="PRODUCTSERIALNUMBER" Type="char" MaxLength="5" />
+        </EntityType>
+        <EntityType Name="TBL_PRODUCTS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NAME" Type="varchar" MaxLength="30" />
+          <Property Name="BRAND" Type="varchar" MaxLength="30" />
+          <Property Name="BUYINGPRICE" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="SELLINGPRICE" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="STOCK" Type="smallint" />
+          <Property Name="CATEGORIES" Type="tinyint" />
+          <Property Name="STATUS" Type="bit" />
+        </EntityType>
+        <Association Name="FK_TBL_BILLDETAIL_TBL_BILLINFORMATION">
+          <End Role="TBL_BILLINFORMATION" Type="Self.TBL_BILLINFORMATION" Multiplicity="0..1" />
+          <End Role="TBL_BILLDETAIL" Type="Self.TBL_BILLDETAIL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_BILLINFORMATION">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TBL_BILLDETAIL">
+              <PropertyRef Name="BILLID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_BILLINFORMATION_TBL_CURRENT">
+          <End Role="TBL_CURRENT" Type="Self.TBL_CURRENT" Multiplicity="0..1" />
+          <End Role="TBL_BILLINFORMATION" Type="Self.TBL_BILLINFORMATION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_CURRENT">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TBL_BILLINFORMATION">
+              <PropertyRef Name="CURRENT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_BILLINFORMATION_TBL_PERSON">
+          <End Role="TBL_PERSON" Type="Self.TBL_PERSON" Multiplicity="0..1" />
+          <End Role="TBL_BILLINFORMATION" Type="Self.TBL_BILLINFORMATION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_PERSON">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TBL_BILLINFORMATION">
+              <PropertyRef Name="PERSON" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_ilceler_TBL_iller">
+          <End Role="TBL_iller" Type="Self.TBL_iller" Multiplicity="1" />
+          <End Role="TBL_ilceler" Type="Self.TBL_ilceler" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_iller">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="TBL_ilceler">
+              <PropertyRef Name="sehir" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_PERSON_TBL_DEPARTMAN">
+          <End Role="TBL_DEPARTMAN" Type="Self.TBL_DEPARTMAN" Multiplicity="0..1" />
+          <End Role="TBL_PERSON" Type="Self.TBL_PERSON" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_DEPARTMAN">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TBL_PERSON">
+              <PropertyRef Name="DEPARTMENT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_PRODUCTACCEPTENCE_TBL_CURRENT">
+          <End Role="TBL_CURRENT" Type="Self.TBL_CURRENT" Multiplicity="0..1" />
+          <End Role="TBL_PRODUCTACCEPTENCE" Type="Self.TBL_PRODUCTACCEPTENCE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_CURRENT">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TBL_PRODUCTACCEPTENCE">
+              <PropertyRef Name="CURRENT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_PRODUCTACCEPTENCE_TBL_PERSON">
+          <End Role="TBL_PERSON" Type="Self.TBL_PERSON" Multiplicity="0..1" />
+          <End Role="TBL_PRODUCTACCEPTENCE" Type="Self.TBL_PRODUCTACCEPTENCE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_PERSON">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TBL_PRODUCTACCEPTENCE">
+              <PropertyRef Name="PERSON" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_PRODUCTMOVEMENT_TBL_CURRENT">
+          <End Role="TBL_CURRENT" Type="Self.TBL_CURRENT" Multiplicity="0..1" />
+          <End Role="TBL_PRODUCTMOVEMENT" Type="Self.TBL_PRODUCTMOVEMENT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_CURRENT">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TBL_PRODUCTMOVEMENT">
+              <PropertyRef Name="COSTUMER" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_PRODUCTMOVEMENT_TBL_PERSON">
+          <End Role="TBL_PERSON" Type="Self.TBL_PERSON" Multiplicity="0..1" />
+          <End Role="TBL_PRODUCTMOVEMENT" Type="Self.TBL_PRODUCTMOVEMENT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_PERSON">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TBL_PRODUCTMOVEMENT">
+              <PropertyRef Name="PERSON" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_PRODUCTMOVEMENT_TBL_PRODUCTS">
+          <End Role="TBL_PRODUCTS" Type="Self.TBL_PRODUCTS" Multiplicity="0..1" />
+          <End Role="TBL_PRODUCTMOVEMENT" Type="Self.TBL_PRODUCTMOVEMENT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_PRODUCTS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TBL_PRODUCTMOVEMENT">
+              <PropertyRef Name="PRODUCT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_PRODUCTS_TBL_CATEGORIES">
+          <End Role="TBL_CATEGORIES" Type="Self.TBL_CATEGORIES" Multiplicity="0..1" />
+          <End Role="TBL_PRODUCTS" Type="Self.TBL_PRODUCTS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_CATEGORIES">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TBL_PRODUCTS">
+              <PropertyRef Name="CATEGORIES" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="maxBrand" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="maxkategory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="urunkategori" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <EntityContainer Name="DBtecnicalservicesModelStoreContainer">
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_ABOUTUS" EntityType="Self.TBL_ABOUTUS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_ADMIN" EntityType="Self.TBL_ADMIN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_BILLDETAIL" EntityType="Self.TBL_BILLDETAIL" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_BILLINFORMATION" EntityType="Self.TBL_BILLINFORMATION" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_CATEGORIES" EntityType="Self.TBL_CATEGORIES" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_CONNECTTION" EntityType="Self.TBL_CONNECTTION" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_CURRENT" EntityType="Self.TBL_CURRENT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_DEFECTDETAIL" EntityType="Self.TBL_DEFECTDETAIL" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_DEPARTMAN" EntityType="Self.TBL_DEPARTMAN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_ilceler" EntityType="Self.TBL_ilceler" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_iller" EntityType="Self.TBL_iller" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_NOTES" EntityType="Self.TBL_NOTES" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_OUTGOINGS" EntityType="Self.TBL_OUTGOINGS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_PERSON" EntityType="Self.TBL_PERSON" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_PRODUCTACCEPTENCE" EntityType="Self.TBL_PRODUCTACCEPTENCE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_PRODUCTFOLLOWING" EntityType="Self.TBL_PRODUCTFOLLOWING" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_PRODUCTMOVEMENT" EntityType="Self.TBL_PRODUCTMOVEMENT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_PRODUCTS" EntityType="Self.TBL_PRODUCTS" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_TBL_BILLDETAIL_TBL_BILLINFORMATION" Association="Self.FK_TBL_BILLDETAIL_TBL_BILLINFORMATION">
+            <End Role="TBL_BILLINFORMATION" EntitySet="TBL_BILLINFORMATION" />
+            <End Role="TBL_BILLDETAIL" EntitySet="TBL_BILLDETAIL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_BILLINFORMATION_TBL_CURRENT" Association="Self.FK_TBL_BILLINFORMATION_TBL_CURRENT">
+            <End Role="TBL_CURRENT" EntitySet="TBL_CURRENT" />
+            <End Role="TBL_BILLINFORMATION" EntitySet="TBL_BILLINFORMATION" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_BILLINFORMATION_TBL_PERSON" Association="Self.FK_TBL_BILLINFORMATION_TBL_PERSON">
+            <End Role="TBL_PERSON" EntitySet="TBL_PERSON" />
+            <End Role="TBL_BILLINFORMATION" EntitySet="TBL_BILLINFORMATION" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_ilceler_TBL_iller" Association="Self.FK_TBL_ilceler_TBL_iller">
+            <End Role="TBL_iller" EntitySet="TBL_iller" />
+            <End Role="TBL_ilceler" EntitySet="TBL_ilceler" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_PERSON_TBL_DEPARTMAN" Association="Self.FK_TBL_PERSON_TBL_DEPARTMAN">
+            <End Role="TBL_DEPARTMAN" EntitySet="TBL_DEPARTMAN" />
+            <End Role="TBL_PERSON" EntitySet="TBL_PERSON" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_PRODUCTACCEPTENCE_TBL_CURRENT" Association="Self.FK_TBL_PRODUCTACCEPTENCE_TBL_CURRENT">
+            <End Role="TBL_CURRENT" EntitySet="TBL_CURRENT" />
+            <End Role="TBL_PRODUCTACCEPTENCE" EntitySet="TBL_PRODUCTACCEPTENCE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_PRODUCTACCEPTENCE_TBL_PERSON" Association="Self.FK_TBL_PRODUCTACCEPTENCE_TBL_PERSON">
+            <End Role="TBL_PERSON" EntitySet="TBL_PERSON" />
+            <End Role="TBL_PRODUCTACCEPTENCE" EntitySet="TBL_PRODUCTACCEPTENCE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_PRODUCTMOVEMENT_TBL_CURRENT" Association="Self.FK_TBL_PRODUCTMOVEMENT_TBL_CURRENT">
+            <End Role="TBL_CURRENT" EntitySet="TBL_CURRENT" />
+            <End Role="TBL_PRODUCTMOVEMENT" EntitySet="TBL_PRODUCTMOVEMENT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_PRODUCTMOVEMENT_TBL_PERSON" Association="Self.FK_TBL_PRODUCTMOVEMENT_TBL_PERSON">
+            <End Role="TBL_PERSON" EntitySet="TBL_PERSON" />
+            <End Role="TBL_PRODUCTMOVEMENT" EntitySet="TBL_PRODUCTMOVEMENT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_PRODUCTMOVEMENT_TBL_PRODUCTS" Association="Self.FK_TBL_PRODUCTMOVEMENT_TBL_PRODUCTS">
+            <End Role="TBL_PRODUCTS" EntitySet="TBL_PRODUCTS" />
+            <End Role="TBL_PRODUCTMOVEMENT" EntitySet="TBL_PRODUCTMOVEMENT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_PRODUCTS_TBL_CATEGORIES" Association="Self.FK_TBL_PRODUCTS_TBL_CATEGORIES">
+            <End Role="TBL_CATEGORIES" EntitySet="TBL_CATEGORIES" />
+            <End Role="TBL_PRODUCTS" EntitySet="TBL_PRODUCTS" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DBtecnicalservicesModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TBL_ADMIN">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="USER_NAME" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="PASSWORD" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TBL_BILLDETAIL">
+          <Key>
+            <PropertyRef Name="BILLDETAILID" />
+          </Key>
+          <Property Name="BILLDETAILID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PRODUCT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NUMBER" Type="Int16" />
+          <Property Name="PRICE" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="TOTALPRICE" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="BILLID" Type="Int32" />
+          <NavigationProperty Name="TBL_BILLINFORMATION" Relationship="Self.FK_TBL_BILLDETAIL_TBL_BILLINFORMATION" FromRole="TBL_BILLDETAIL" ToRole="TBL_BILLINFORMATION" />
+        </EntityType>
+        <EntityType Name="TBL_BILLINFORMATION">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SERIES" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="ITEMNO" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="DATE" Type="DateTime" Precision="0" />
+          <Property Name="TIME" Type="String" MaxLength="5" FixedLength="true" Unicode="false" />
+          <Property Name="TAXOFFICE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CURRENT" Type="Int32" />
+          <Property Name="PERSON" Type="Int16" />
+          <NavigationProperty Name="TBL_BILLDETAIL" Relationship="Self.FK_TBL_BILLDETAIL_TBL_BILLINFORMATION" FromRole="TBL_BILLINFORMATION" ToRole="TBL_BILLDETAIL" />
+          <NavigationProperty Name="TBL_CURRENT" Relationship="Self.FK_TBL_BILLINFORMATION_TBL_CURRENT" FromRole="TBL_BILLINFORMATION" ToRole="TBL_CURRENT" />
+          <NavigationProperty Name="TBL_PERSON" Relationship="Self.FK_TBL_BILLINFORMATION_TBL_PERSON" FromRole="TBL_BILLINFORMATION" ToRole="TBL_PERSON" />
+        </EntityType>
+        <EntityType Name="TBL_CATEGORIES">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NAME" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="TBL_PRODUCTS" Relationship="Self.FK_TBL_PRODUCTS_TBL_CATEGORIES" FromRole="TBL_CATEGORIES" ToRole="TBL_PRODUCTS" />
+        </EntityType>
+        <EntityType Name="TBL_CURRENT">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NAME" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="SURNAME" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="PHONE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="MAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PROVINCE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DISTRICT" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="BANK" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TAXOFFICE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TAXNUMBER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="STATUES" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ADRESS" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="TBL_BILLINFORMATION" Relationship="Self.FK_TBL_BILLINFORMATION_TBL_CURRENT" FromRole="TBL_CURRENT" ToRole="TBL_BILLINFORMATION" />
+          <NavigationProperty Name="TBL_PRODUCTACCEPTENCE" Relationship="Self.FK_TBL_PRODUCTACCEPTENCE_TBL_CURRENT" FromRole="TBL_CURRENT" ToRole="TBL_PRODUCTACCEPTENCE" />
+          <NavigationProperty Name="TBL_PRODUCTMOVEMENT" Relationship="Self.FK_TBL_PRODUCTMOVEMENT_TBL_CURRENT" FromRole="TBL_CURRENT" ToRole="TBL_PRODUCTMOVEMENT" />
+        </EntityType>
+        <EntityType Name="TBL_DEFECTDETAIL">
+          <Key>
+            <PropertyRef Name="ERRORID" />
+          </Key>
+          <Property Name="ERRORID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OPERATION" Type="Int32" />
+          <Property Name="PROBLEM" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="EXPLANATION" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="FIRSTPRICE" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="PRICE" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="OPS" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TBL_DEPARTMAN">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EXPLANATION" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="TBL_PERSON" Relationship="Self.FK_TBL_PERSON_TBL_DEPARTMAN" FromRole="TBL_DEPARTMAN" ToRole="TBL_PERSON" />
+        </EntityType>
+        <EntityType Name="TBL_NOTES">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="HEADING" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CONTENT1" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="STATUS" Type="Boolean" />
+          <Property Name="DATE" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="TBL_OUTGOINGS">
+          <Key>
+            <PropertyRef Name="OUTGOINGSID" />
+          </Key>
+          <Property Name="OUTGOINGSID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OUTGOINGEXPLANATION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DATE" Type="DateTime" Precision="0" />
+          <Property Name="PRICE" Type="Decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="TBL_PERSON">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AD" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="SOYAD" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="DEPARTMENT" Type="Byte" />
+          <Property Name="PHOTO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="MAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PHONE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="TBL_BILLINFORMATION" Relationship="Self.FK_TBL_BILLINFORMATION_TBL_PERSON" FromRole="TBL_PERSON" ToRole="TBL_BILLINFORMATION" />
+          <NavigationProperty Name="TBL_DEPARTMAN" Relationship="Self.FK_TBL_PERSON_TBL_DEPARTMAN" FromRole="TBL_PERSON" ToRole="TBL_DEPARTMAN" />
+          <NavigationProperty Name="TBL_PRODUCTACCEPTENCE" Relationship="Self.FK_TBL_PRODUCTACCEPTENCE_TBL_PERSON" FromRole="TBL_PERSON" ToRole="TBL_PRODUCTACCEPTENCE" />
+          <NavigationProperty Name="TBL_PRODUCTMOVEMENT" Relationship="Self.FK_TBL_PRODUCTMOVEMENT_TBL_PERSON" FromRole="TBL_PERSON" ToRole="TBL_PRODUCTMOVEMENT" />
+        </EntityType>
+        <EntityType Name="TBL_PRODUCTACCEPTENCE">
+          <Key>
+            <PropertyRef Name="OPERATIONID" />
+          </Key>
+          <Property Name="OPERATIONID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CURRENT" Type="Int32" />
+          <Property Name="PERSON" Type="Int16" />
+          <Property Name="ARRIVEDATE" Type="DateTime" Precision="0" />
+          <Property Name="ENDINGDATE" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="TBL_CURRENT" Relationship="Self.FK_TBL_PRODUCTACCEPTENCE_TBL_CURRENT" FromRole="TBL_PRODUCTACCEPTENCE" ToRole="TBL_CURRENT" />
+          <NavigationProperty Name="TBL_PERSON" Relationship="Self.FK_TBL_PRODUCTACCEPTENCE_TBL_PERSON" FromRole="TBL_PRODUCTACCEPTENCE" ToRole="TBL_PERSON" />
+          <Property Name="PROSERNUM" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="PRODUCTSTATUS" Type="Boolean" />
+          <Property Name="PRODUCTSTATUSDETAIL" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TBL_PRODUCTFOLLOWING">
+          <Key>
+            <PropertyRef Name="FOLLOWINGID" />
+          </Key>
+          <Property Name="FOLLOWINGID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DATE" Type="DateTime" Precision="0" />
+          <Property Name="EXPLANATION" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="SERIALNO" Type="String" Nullable="false" MaxLength="5" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TBL_PRODUCTMOVEMENT">
+          <Key>
+            <PropertyRef Name="MOVEMENTID" />
+          </Key>
+          <Property Name="MOVEMENTID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PRODUCT" Type="Int32" />
+          <Property Name="COSTUMER" Type="Int32" />
+          <Property Name="PERSON" Type="Int16" />
+          <Property Name="DATE" Type="DateTime" Precision="0" />
+          <Property Name="NUMBER" Type="Int16" />
+          <Property Name="PRICE" Type="Decimal" Precision="18" Scale="2" />
+          <NavigationProperty Name="TBL_CURRENT" Relationship="Self.FK_TBL_PRODUCTMOVEMENT_TBL_CURRENT" FromRole="TBL_PRODUCTMOVEMENT" ToRole="TBL_CURRENT" />
+          <NavigationProperty Name="TBL_PERSON" Relationship="Self.FK_TBL_PRODUCTMOVEMENT_TBL_PERSON" FromRole="TBL_PRODUCTMOVEMENT" ToRole="TBL_PERSON" />
+          <Property Name="PRODUCTSERIALNUMBER" Type="String" MaxLength="5" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="TBL_PRODUCTS" Relationship="DBtecnicalservicesModel.FK_TBL_PRODUCTMOVEMENT_TBL_PRODUCTS" FromRole="TBL_PRODUCTMOVEMENT" ToRole="TBL_PRODUCTS" />
+        </EntityType>
+        <EntityType Name="TBL_PRODUCTS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NAME" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="BRAND" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="BUYINGPRICE" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="SELLINGPRICE" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="STOCK" Type="Int16" />
+          <Property Name="CATEGORIES" Type="Byte" />
+          <Property Name="STATUS" Type="Boolean" />
+          <NavigationProperty Name="TBL_CATEGORIES" Relationship="Self.FK_TBL_PRODUCTS_TBL_CATEGORIES" FromRole="TBL_PRODUCTS" ToRole="TBL_CATEGORIES" />
+          <NavigationProperty Name="TBL_PRODUCTMOVEMENT" Relationship="DBtecnicalservicesModel.FK_TBL_PRODUCTMOVEMENT_TBL_PRODUCTS" FromRole="TBL_PRODUCTS" ToRole="TBL_PRODUCTMOVEMENT" />
+        </EntityType>
+        <Association Name="FK_TBL_BILLDETAIL_TBL_BILLINFORMATION">
+          <End Role="TBL_BILLINFORMATION" Type="Self.TBL_BILLINFORMATION" Multiplicity="0..1" />
+          <End Role="TBL_BILLDETAIL" Type="Self.TBL_BILLDETAIL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_BILLINFORMATION">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TBL_BILLDETAIL">
+              <PropertyRef Name="BILLID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_BILLINFORMATION_TBL_CURRENT">
+          <End Role="TBL_CURRENT" Type="Self.TBL_CURRENT" Multiplicity="0..1" />
+          <End Role="TBL_BILLINFORMATION" Type="Self.TBL_BILLINFORMATION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_CURRENT">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TBL_BILLINFORMATION">
+              <PropertyRef Name="CURRENT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_BILLINFORMATION_TBL_PERSON">
+          <End Role="TBL_PERSON" Type="Self.TBL_PERSON" Multiplicity="0..1" />
+          <End Role="TBL_BILLINFORMATION" Type="Self.TBL_BILLINFORMATION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_PERSON">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TBL_BILLINFORMATION">
+              <PropertyRef Name="PERSON" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_PRODUCTS_TBL_CATEGORIES">
+          <End Role="TBL_CATEGORIES" Type="Self.TBL_CATEGORIES" Multiplicity="0..1" />
+          <End Role="TBL_PRODUCTS" Type="Self.TBL_PRODUCTS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_CATEGORIES">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TBL_PRODUCTS">
+              <PropertyRef Name="CATEGORIES" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_PRODUCTACCEPTENCE_TBL_CURRENT">
+          <End Role="TBL_CURRENT" Type="Self.TBL_CURRENT" Multiplicity="0..1" />
+          <End Role="TBL_PRODUCTACCEPTENCE" Type="Self.TBL_PRODUCTACCEPTENCE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_CURRENT">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TBL_PRODUCTACCEPTENCE">
+              <PropertyRef Name="CURRENT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_PRODUCTMOVEMENT_TBL_CURRENT">
+          <End Role="TBL_CURRENT" Type="Self.TBL_CURRENT" Multiplicity="0..1" />
+          <End Role="TBL_PRODUCTMOVEMENT" Type="Self.TBL_PRODUCTMOVEMENT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_CURRENT">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TBL_PRODUCTMOVEMENT">
+              <PropertyRef Name="COSTUMER" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_PERSON_TBL_DEPARTMAN">
+          <End Role="TBL_DEPARTMAN" Type="Self.TBL_DEPARTMAN" Multiplicity="0..1" />
+          <End Role="TBL_PERSON" Type="Self.TBL_PERSON" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_DEPARTMAN">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TBL_PERSON">
+              <PropertyRef Name="DEPARTMENT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_PRODUCTACCEPTENCE_TBL_PERSON">
+          <End Role="TBL_PERSON" Type="Self.TBL_PERSON" Multiplicity="0..1" />
+          <End Role="TBL_PRODUCTACCEPTENCE" Type="Self.TBL_PRODUCTACCEPTENCE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_PERSON">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TBL_PRODUCTACCEPTENCE">
+              <PropertyRef Name="PERSON" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_PRODUCTMOVEMENT_TBL_PERSON">
+          <End Role="TBL_PERSON" Type="Self.TBL_PERSON" Multiplicity="0..1" />
+          <End Role="TBL_PRODUCTMOVEMENT" Type="Self.TBL_PRODUCTMOVEMENT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_PERSON">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TBL_PRODUCTMOVEMENT">
+              <PropertyRef Name="PERSON" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DBtecnicalservicesEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <EntitySet Name="TBL_ADMIN" EntityType="Self.TBL_ADMIN" />
+          <EntitySet Name="TBL_BILLDETAIL" EntityType="Self.TBL_BILLDETAIL" />
+          <EntitySet Name="TBL_BILLINFORMATION" EntityType="Self.TBL_BILLINFORMATION" />
+          <EntitySet Name="TBL_CATEGORIES" EntityType="Self.TBL_CATEGORIES" />
+          <EntitySet Name="TBL_CURRENT" EntityType="Self.TBL_CURRENT" />
+          <EntitySet Name="TBL_DEFECTDETAIL" EntityType="Self.TBL_DEFECTDETAIL" />
+          <EntitySet Name="TBL_DEPARTMAN" EntityType="Self.TBL_DEPARTMAN" />
+          <EntitySet Name="TBL_NOTES" EntityType="Self.TBL_NOTES" />
+          <EntitySet Name="TBL_OUTGOINGS" EntityType="Self.TBL_OUTGOINGS" />
+          <EntitySet Name="TBL_PERSON" EntityType="Self.TBL_PERSON" />
+          <EntitySet Name="TBL_PRODUCTACCEPTENCE" EntityType="Self.TBL_PRODUCTACCEPTENCE" />
+          <EntitySet Name="TBL_PRODUCTFOLLOWING" EntityType="Self.TBL_PRODUCTFOLLOWING" />
+          <EntitySet Name="TBL_PRODUCTMOVEMENT" EntityType="Self.TBL_PRODUCTMOVEMENT" />
+          <EntitySet Name="TBL_PRODUCTS" EntityType="Self.TBL_PRODUCTS" />
+          <AssociationSet Name="FK_TBL_BILLDETAIL_TBL_BILLINFORMATION" Association="Self.FK_TBL_BILLDETAIL_TBL_BILLINFORMATION">
+            <End Role="TBL_BILLINFORMATION" EntitySet="TBL_BILLINFORMATION" />
+            <End Role="TBL_BILLDETAIL" EntitySet="TBL_BILLDETAIL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_BILLINFORMATION_TBL_CURRENT" Association="Self.FK_TBL_BILLINFORMATION_TBL_CURRENT">
+            <End Role="TBL_CURRENT" EntitySet="TBL_CURRENT" />
+            <End Role="TBL_BILLINFORMATION" EntitySet="TBL_BILLINFORMATION" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_BILLINFORMATION_TBL_PERSON" Association="Self.FK_TBL_BILLINFORMATION_TBL_PERSON">
+            <End Role="TBL_PERSON" EntitySet="TBL_PERSON" />
+            <End Role="TBL_BILLINFORMATION" EntitySet="TBL_BILLINFORMATION" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_PRODUCTS_TBL_CATEGORIES" Association="Self.FK_TBL_PRODUCTS_TBL_CATEGORIES">
+            <End Role="TBL_CATEGORIES" EntitySet="TBL_CATEGORIES" />
+            <End Role="TBL_PRODUCTS" EntitySet="TBL_PRODUCTS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_PRODUCTACCEPTENCE_TBL_CURRENT" Association="Self.FK_TBL_PRODUCTACCEPTENCE_TBL_CURRENT">
+            <End Role="TBL_CURRENT" EntitySet="TBL_CURRENT" />
+            <End Role="TBL_PRODUCTACCEPTENCE" EntitySet="TBL_PRODUCTACCEPTENCE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_PRODUCTMOVEMENT_TBL_CURRENT" Association="Self.FK_TBL_PRODUCTMOVEMENT_TBL_CURRENT">
+            <End Role="TBL_CURRENT" EntitySet="TBL_CURRENT" />
+            <End Role="TBL_PRODUCTMOVEMENT" EntitySet="TBL_PRODUCTMOVEMENT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_PERSON_TBL_DEPARTMAN" Association="Self.FK_TBL_PERSON_TBL_DEPARTMAN">
+            <End Role="TBL_DEPARTMAN" EntitySet="TBL_DEPARTMAN" />
+            <End Role="TBL_PERSON" EntitySet="TBL_PERSON" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_PRODUCTACCEPTENCE_TBL_PERSON" Association="Self.FK_TBL_PRODUCTACCEPTENCE_TBL_PERSON">
+            <End Role="TBL_PERSON" EntitySet="TBL_PERSON" />
+            <End Role="TBL_PRODUCTACCEPTENCE" EntitySet="TBL_PRODUCTACCEPTENCE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_PRODUCTMOVEMENT_TBL_PERSON" Association="Self.FK_TBL_PRODUCTMOVEMENT_TBL_PERSON">
+            <End Role="TBL_PERSON" EntitySet="TBL_PERSON" />
+            <End Role="TBL_PRODUCTMOVEMENT" EntitySet="TBL_PRODUCTMOVEMENT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_PRODUCTMOVEMENT_TBL_PRODUCTS" Association="DBtecnicalservicesModel.FK_TBL_PRODUCTMOVEMENT_TBL_PRODUCTS">
+            <End Role="TBL_PRODUCTS" EntitySet="TBL_PRODUCTS" />
+            <End Role="TBL_PRODUCTMOVEMENT" EntitySet="TBL_PRODUCTMOVEMENT" />
+          </AssociationSet>
+          <EntitySet Name="TBL_ABOUTUS" EntityType="DBtecnicalservicesModel.TBL_ABOUTUS" />
+          <EntitySet Name="TBL_CONNECTTION" EntityType="DBtecnicalservicesModel.TBL_CONNECTTION" />
+          <FunctionImport Name="urunkategori" ReturnType="Collection(DBtecnicalservicesModel.urunkategori_Result)" />
+          <FunctionImport Name="maxkategory" ReturnType="Collection(String)" />
+          <FunctionImport Name="maxBrand" ReturnType="Collection(DBtecnicalservicesModel.maxBrand_Result)" />
+          <EntitySet Name="TBL_ilceler" EntityType="DBtecnicalservicesModel.TBL_ilceler" />
+          <EntitySet Name="TBL_iller" EntityType="DBtecnicalservicesModel.TBL_iller" />
+          <AssociationSet Name="FK_TBL_ilceler_TBL_iller" Association="DBtecnicalservicesModel.FK_TBL_ilceler_TBL_iller">
+            <End Role="TBL_iller" EntitySet="TBL_iller" />
+            <End Role="TBL_ilceler" EntitySet="TBL_ilceler" />
+          </AssociationSet>
+        </EntityContainer>
+        <Association Name="FK_TBL_PRODUCTMOVEMENT_TBL_PRODUCTS">
+          <End Type="DBtecnicalservicesModel.TBL_PRODUCTS" Role="TBL_PRODUCTS" Multiplicity="0..1" />
+          <End Type="DBtecnicalservicesModel.TBL_PRODUCTMOVEMENT" Role="TBL_PRODUCTMOVEMENT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_PRODUCTS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TBL_PRODUCTMOVEMENT">
+              <PropertyRef Name="PRODUCT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="TBL_ABOUTUS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ABOUTUS" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TBL_CONNECTTION">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NAMESURNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SUBJECT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MESSAGE" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <ComplexType Name="urunkategori_Result">
+          <Property Type="String" Name="NAME" Nullable="true" MaxLength="30" />
+          <Property Type="Int32" Name="ADET" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="maxBrand_Result">
+          <Property Type="String" Name="BRAND" Nullable="true" MaxLength="30" />
+          <Property Type="Int32" Name="Column1" Nullable="true" />
+        </ComplexType>
+        <EntityType Name="TBL_ilceler">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="ilce" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="sehir" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="TBL_iller" Relationship="DBtecnicalservicesModel.FK_TBL_ilceler_TBL_iller" FromRole="TBL_ilceler" ToRole="TBL_iller" />
+        </EntityType>
+        <EntityType Name="TBL_iller">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="sehir" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="TBL_ilceler" Relationship="DBtecnicalservicesModel.FK_TBL_ilceler_TBL_iller" FromRole="TBL_iller" ToRole="TBL_ilceler" />
+        </EntityType>
+        <Association Name="FK_TBL_ilceler_TBL_iller">
+          <End Type="DBtecnicalservicesModel.TBL_iller" Role="TBL_iller" Multiplicity="1" />
+          <End Type="DBtecnicalservicesModel.TBL_ilceler" Role="TBL_ilceler" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_iller">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="TBL_ilceler">
+              <PropertyRef Name="sehir" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DBtecnicalservicesModelStoreContainer" CdmEntityContainer="DBtecnicalservicesEntities">
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="DBtecnicalservicesModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_ADMIN">
+            <EntityTypeMapping TypeName="DBtecnicalservicesModel.TBL_ADMIN">
+              <MappingFragment StoreEntitySet="TBL_ADMIN">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="USER_NAME" ColumnName="USER NAME" />
+                <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_BILLDETAIL">
+            <EntityTypeMapping TypeName="DBtecnicalservicesModel.TBL_BILLDETAIL">
+              <MappingFragment StoreEntitySet="TBL_BILLDETAIL">
+                <ScalarProperty Name="BILLDETAILID" ColumnName="BILLDETAILID" />
+                <ScalarProperty Name="PRODUCT" ColumnName="PRODUCT" />
+                <ScalarProperty Name="NUMBER" ColumnName="NUMBER" />
+                <ScalarProperty Name="PRICE" ColumnName="PRICE" />
+                <ScalarProperty Name="TOTALPRICE" ColumnName="TOTALPRICE" />
+                <ScalarProperty Name="BILLID" ColumnName="BILLID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_BILLINFORMATION">
+            <EntityTypeMapping TypeName="DBtecnicalservicesModel.TBL_BILLINFORMATION">
+              <MappingFragment StoreEntitySet="TBL_BILLINFORMATION">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="SERIES" ColumnName="SERIES" />
+                <ScalarProperty Name="ITEMNO" ColumnName="ITEMNO" />
+                <ScalarProperty Name="DATE" ColumnName="DATE" />
+                <ScalarProperty Name="TIME" ColumnName="TIME" />
+                <ScalarProperty Name="TAXOFFICE" ColumnName="TAXOFFICE" />
+                <ScalarProperty Name="CURRENT" ColumnName="CURRENT" />
+                <ScalarProperty Name="PERSON" ColumnName="PERSON" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_CATEGORIES">
+            <EntityTypeMapping TypeName="DBtecnicalservicesModel.TBL_CATEGORIES">
+              <MappingFragment StoreEntitySet="TBL_CATEGORIES">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_CURRENT">
+            <EntityTypeMapping TypeName="DBtecnicalservicesModel.TBL_CURRENT">
+              <MappingFragment StoreEntitySet="TBL_CURRENT">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="SURNAME" ColumnName="SURNAME" />
+                <ScalarProperty Name="PHONE" ColumnName="PHONE" />
+                <ScalarProperty Name="MAIL" ColumnName="MAIL" />
+                <ScalarProperty Name="PROVINCE" ColumnName="PROVINCE" />
+                <ScalarProperty Name="DISTRICT" ColumnName="DISTRICT" />
+                <ScalarProperty Name="BANK" ColumnName="BANK" />
+                <ScalarProperty Name="TAXOFFICE" ColumnName="TAXOFFICE" />
+                <ScalarProperty Name="TAXNUMBER" ColumnName="TAXNUMBER" />
+                <ScalarProperty Name="STATUES" ColumnName="STATUES" />
+                <ScalarProperty Name="ADRESS" ColumnName="ADRESS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_DEFECTDETAIL">
+            <EntityTypeMapping TypeName="DBtecnicalservicesModel.TBL_DEFECTDETAIL">
+              <MappingFragment StoreEntitySet="TBL_DEFECTDETAIL">
+                <ScalarProperty Name="ERRORID" ColumnName="ERRORID" />
+                <ScalarProperty Name="OPERATION" ColumnName="OPERATION" />
+                <ScalarProperty Name="PROBLEM" ColumnName="PROBLEM" />
+                <ScalarProperty Name="EXPLANATION" ColumnName="EXPLANATION" />
+                <ScalarProperty Name="FIRSTPRICE" ColumnName="FIRSTPRICE" />
+                <ScalarProperty Name="PRICE" ColumnName="PRICE" />
+                <ScalarProperty Name="OPS" ColumnName="OPS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_DEPARTMAN">
+            <EntityTypeMapping TypeName="DBtecnicalservicesModel.TBL_DEPARTMAN">
+              <MappingFragment StoreEntitySet="TBL_DEPARTMAN">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="EXPLANATION" ColumnName="EXPLANATION" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_NOTES">
+            <EntityTypeMapping TypeName="DBtecnicalservicesModel.TBL_NOTES">
+              <MappingFragment StoreEntitySet="TBL_NOTES">
+                <ScalarProperty Name="DATE" ColumnName="DATE" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="HEADING" ColumnName="HEADING" />
+                <ScalarProperty Name="CONTENT1" ColumnName="CONTENT1" />
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_OUTGOINGS">
+            <EntityTypeMapping TypeName="DBtecnicalservicesModel.TBL_OUTGOINGS">
+              <MappingFragment StoreEntitySet="TBL_OUTGOINGS">
+                <ScalarProperty Name="OUTGOINGSID" ColumnName="OUTGOINGSID" />
+                <ScalarProperty Name="OUTGOINGEXPLANATION" ColumnName="OUTGOINGEXPLANATION" />
+                <ScalarProperty Name="DATE" ColumnName="DATE" />
+                <ScalarProperty Name="PRICE" ColumnName="PRICE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_PERSON">
+            <EntityTypeMapping TypeName="DBtecnicalservicesModel.TBL_PERSON">
+              <MappingFragment StoreEntitySet="TBL_PERSON">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="AD" ColumnName="AD" />
+                <ScalarProperty Name="SOYAD" ColumnName="SOYAD" />
+                <ScalarProperty Name="DEPARTMENT" ColumnName="DEPARTMENT" />
+                <ScalarProperty Name="PHOTO" ColumnName="PHOTO" />
+                <ScalarProperty Name="MAIL" ColumnName="MAIL" />
+                <ScalarProperty Name="PHONE" ColumnName="PHONE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_PRODUCTACCEPTENCE">
+            <EntityTypeMapping TypeName="DBtecnicalservicesModel.TBL_PRODUCTACCEPTENCE">
+              <MappingFragment StoreEntitySet="TBL_PRODUCTACCEPTENCE">
+                <ScalarProperty Name="PRODUCTSTATUSDETAIL" ColumnName="PRODUCTSTATUSDETAIL" />
+                <ScalarProperty Name="PRODUCTSTATUS" ColumnName="PRODUCTSTATUS" />
+                <ScalarProperty Name="PROSERNUM" ColumnName="PROSERNUM" />
+                <ScalarProperty Name="OPERATIONID" ColumnName="OPERATIONID" />
+                <ScalarProperty Name="CURRENT" ColumnName="CURRENT" />
+                <ScalarProperty Name="PERSON" ColumnName="PERSON" />
+                <ScalarProperty Name="ARRIVEDATE" ColumnName="ARRIVEDATE" />
+                <ScalarProperty Name="ENDINGDATE" ColumnName="ENDINGDATE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_PRODUCTFOLLOWING">
+            <EntityTypeMapping TypeName="DBtecnicalservicesModel.TBL_PRODUCTFOLLOWING">
+              <MappingFragment StoreEntitySet="TBL_PRODUCTFOLLOWING">
+                <ScalarProperty Name="SERIALNO" ColumnName="SERIALNO" />
+                <ScalarProperty Name="EXPLANATION" ColumnName="EXPLANATION" />
+                <ScalarProperty Name="FOLLOWINGID" ColumnName="FOLLOWINGID" />
+                <ScalarProperty Name="DATE" ColumnName="DATE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_PRODUCTMOVEMENT">
+            <EntityTypeMapping TypeName="DBtecnicalservicesModel.TBL_PRODUCTMOVEMENT">
+              <MappingFragment StoreEntitySet="TBL_PRODUCTMOVEMENT">
+                <ScalarProperty Name="PRODUCTSERIALNUMBER" ColumnName="PRODUCTSERIALNUMBER" />
+                <ScalarProperty Name="MOVEMENTID" ColumnName="MOVEMENTID" />
+                <ScalarProperty Name="PRODUCT" ColumnName="PRODUCT" />
+                <ScalarProperty Name="COSTUMER" ColumnName="COSTUMER" />
+                <ScalarProperty Name="PERSON" ColumnName="PERSON" />
+                <ScalarProperty Name="DATE" ColumnName="DATE" />
+                <ScalarProperty Name="NUMBER" ColumnName="NUMBER" />
+                <ScalarProperty Name="PRICE" ColumnName="PRICE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_PRODUCTS">
+            <EntityTypeMapping TypeName="DBtecnicalservicesModel.TBL_PRODUCTS">
+              <MappingFragment StoreEntitySet="TBL_PRODUCTS">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="BRAND" ColumnName="BRAND" />
+                <ScalarProperty Name="BUYINGPRICE" ColumnName="BUYINGPRICE" />
+                <ScalarProperty Name="SELLINGPRICE" ColumnName="SELLINGPRICE" />
+                <ScalarProperty Name="STOCK" ColumnName="STOCK" />
+                <ScalarProperty Name="CATEGORIES" ColumnName="CATEGORIES" />
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_ABOUTUS">
+            <EntityTypeMapping TypeName="DBtecnicalservicesModel.TBL_ABOUTUS">
+              <MappingFragment StoreEntitySet="TBL_ABOUTUS">
+                <ScalarProperty Name="ABOUTUS" ColumnName="ABOUTUS" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_CONNECTTION">
+            <EntityTypeMapping TypeName="DBtecnicalservicesModel.TBL_CONNECTTION">
+              <MappingFragment StoreEntitySet="TBL_CONNECTTION">
+                <ScalarProperty Name="MESSAGE" ColumnName="MESSAGE" />
+                <ScalarProperty Name="SUBJECT" ColumnName="SUBJECT" />
+                <ScalarProperty Name="MAIL" ColumnName="MAIL" />
+                <ScalarProperty Name="NAMESURNAME" ColumnName="NAMESURNAME" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="urunkategori" FunctionName="DBtecnicalservicesModel.Store.urunkategori">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DBtecnicalservicesModel.urunkategori_Result">
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="ADET" ColumnName="ADET" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="maxkategory" FunctionName="DBtecnicalservicesModel.Store.maxkategory" />
+          <FunctionImportMapping FunctionImportName="maxBrand" FunctionName="DBtecnicalservicesModel.Store.maxBrand">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DBtecnicalservicesModel.maxBrand_Result">
+                <ScalarProperty Name="BRAND" ColumnName="BRAND" />
+                <ScalarProperty Name="Column1" ColumnName="Column1" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="TBL_ilceler">
+            <EntityTypeMapping TypeName="DBtecnicalservicesModel.TBL_ilceler">
+              <MappingFragment StoreEntitySet="TBL_ilceler">
+                <ScalarProperty Name="sehir" ColumnName="sehir" />
+                <ScalarProperty Name="ilce" ColumnName="ilce" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_iller">
+            <EntityTypeMapping TypeName="DBtecnicalservicesModel.TBL_iller">
+              <MappingFragment StoreEntitySet="TBL_iller">
+                <ScalarProperty Name="sehir" ColumnName="sehir" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

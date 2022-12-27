@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="c888b424856d468b895aaea53a419af9" Name="Diagram1" ZoomLevel="71">
+        <EntityTypeShape EntityType="DBtecnicalservicesModel.sysdiagram" Width="1.5" PointX="7.75" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBtecnicalservicesModel.TBL_ADMIN" Width="1.5" PointX="9.75" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBtecnicalservicesModel.TBL_BILLDETAIL" Width="1.5" PointX="7.5" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBtecnicalservicesModel.TBL_BILLINFORMATION" Width="1.5" PointX="5.25" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBtecnicalservicesModel.TBL_CATEGORIES" Width="1.5" PointX="0.75" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBtecnicalservicesModel.TBL_CURRENT" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBtecnicalservicesModel.TBL_DEFECTDETAIL" Width="1.5" PointX="11.375" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBtecnicalservicesModel.TBL_DEPARTMAN" Width="1.5" PointX="0.75" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBtecnicalservicesModel.TBL_NOTES" Width="1.5" PointX="11.5" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBtecnicalservicesModel.TBL_OUTGOINGS" Width="1.5" PointX="11.75" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBtecnicalservicesModel.TBL_PERSON" Width="1.5" PointX="3" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBtecnicalservicesModel.TBL_PRODUCTACCEPTENCE" Width="2.125" PointX="5.25" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBtecnicalservicesModel.TBL_PRODUCTFOLLOWING" Width="1.75" PointX="5.25" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBtecnicalservicesModel.TBL_PRODUCTMOVEMENT" Width="2.375" PointX="8" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBtecnicalservicesModel.TBL_PRODUCTS" Width="1.5" PointX="3" PointY="6" IsExpanded="true" />
+        <AssociationConnector Association="DBtecnicalservicesModel.FK_TBL_BILLDETAIL_TBL_BILLINFORMATION" ManuallyRouted="false" />
+        <AssociationConnector Association="DBtecnicalservicesModel.FK_TBL_BILLINFORMATION_TBL_CURRENT" ManuallyRouted="false" />
+        <AssociationConnector Association="DBtecnicalservicesModel.FK_TBL_BILLINFORMATION_TBL_PERSON" ManuallyRouted="false" />
+        <AssociationConnector Association="DBtecnicalservicesModel.FK_TBL_PRODUCTS_TBL_CATEGORIES" ManuallyRouted="false" />
+        <AssociationConnector Association="DBtecnicalservicesModel.FK_TBL_PRODUCTACCEPTENCE_TBL_CURRENT" ManuallyRouted="false" />
+        <AssociationConnector Association="DBtecnicalservicesModel.FK_TBL_PRODUCTMOVEMENT_TBL_CURRENT" ManuallyRouted="false" />
+        <AssociationConnector Association="DBtecnicalservicesModel.FK_TBL_PERSON_TBL_DEPARTMAN" ManuallyRouted="false" />
+        <AssociationConnector Association="DBtecnicalservicesModel.FK_TBL_PRODUCTACCEPTENCE_TBL_PERSON" ManuallyRouted="false" />
+        <AssociationConnector Association="DBtecnicalservicesModel.FK_TBL_PRODUCTMOVEMENT_TBL_PERSON" ManuallyRouted="false" />
+        <AssociationConnector Association="DBtecnicalservicesModel.FK_TBL_PRODUCTMOVEMENT_TBL_PRODUCTS" />
+        <EntityTypeShape EntityType="DBtecnicalservicesModel.TBL_ABOUTUS" Width="1.5" PointX="5.375" PointY="13.75" />
+        <EntityTypeShape EntityType="DBtecnicalservicesModel.TBL_CONNECTTION" Width="1.5" PointX="7.375" PointY="13.75" />
+        <EntityTypeShape EntityType="DBtecnicalservicesModel.TBL_ilceler" Width="1.5" PointX="17" PointY="8.875" />
+        <EntityTypeShape EntityType="DBtecnicalservicesModel.TBL_iller" Width="1.5" PointX="14.625" PointY="9.125" />
+        <AssociationConnector Association="DBtecnicalservicesModel.FK_TBL_ilceler_TBL_iller" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
